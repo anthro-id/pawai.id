@@ -28,7 +28,7 @@ export default function Home() {
         </Text>
 
         <Flex align={"center"} gap={"0.5rem"}>
-          <Text size={"sm"} fw={400} lts={0.375} c={"dark.1"}>
+          <Text size={"sm"} fw={500} lts={0.25} c={"dark.1"}>
             More contents coming soon, here and on
           </Text>
 
@@ -45,7 +45,7 @@ export default function Home() {
         <TrailerTweet />
       </Suspense>
 
-      <Text size={"0.625em"} c={"dark.3"} fw={500} lh={1.25} ta={"center"}>
+      <Text size={"0.625em"} c={"dark.3"} fw={500} lh={1.5} ta={"center"}>
         &copy; 2024-{currentYear} <Link href={"https://anthro.id"} target={"_blank"}>Anthro Indonesia Consortium</Link> & 2026 PAWAI (Party Along with Anthro Indonesia) <br />
         All rights reserved.
       </Text>
