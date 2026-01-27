@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta content="https://pawai.id" property="og:url" />
         <meta content="https://canine.cdn.anthro.id/handled-by-anthroid-team/27-01-26/ff2847e9-1470-4a8a-a228-fd9877440b0f" property="og:image" />
         <meta content="#FC5D01" name="theme-color" />
+        <meta name="twitter:card" content="summary_large_image" />
 
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
       </Head>
