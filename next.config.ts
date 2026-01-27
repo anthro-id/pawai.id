@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   reactStrictMode: true,
-  poweredByHeader: false
+  poweredByHeader: false,
+  experimental: {
+    useLightningcss: true,
+    fallbackNodePolyfills: false
+  }
 };
 
 export default nextConfig;
