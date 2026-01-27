@@ -1,0 +1,16 @@
+:root {
+  --dark01: #121112;
+  --dark02: #1F1D1F;
+
+  --light01: #FAF9F6;
+}
+
+body {
+  background: linear-gradient(67deg,var(--dark01) 0%, var(--dark02) 100%);
+  font-family: "General Sans", Helvetica, sans-serif;
+  min-height: 100dvh;
+}
+
+a {
+  color: inherit;
+}
