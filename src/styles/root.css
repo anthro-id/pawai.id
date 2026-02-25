@@ -7,7 +7,7 @@
 
 body {
   background-color: var(--dark01);
-  min-height: 100dvh;
+  position: relative;
 }
 
 a {
