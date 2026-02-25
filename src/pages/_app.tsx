@@ -1,5 +1,8 @@
 import { Fragment } from "react";
 
+import { Lenis } from "lenis/react";
+
+
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
@@ -28,6 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <MantineProvider theme={mantineTheme} forceColorScheme={"dark"}>
+        <Lenis root>
+            <Component {...pageProps} />
+        </Lenis>
       </MantineProvider>
     </Fragment>
   );
