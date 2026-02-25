@@ -6,7 +6,7 @@ import Head from "next/head";
 import "normalize.css";
 
 import { MantineProvider } from "@mantine/core";
-import "@/components/Mantine";
+import { mantineTheme } from "@/components/Mantine";
 
 import "@/styles/fonts.css";
 import "@/styles/root.css";
@@ -27,8 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
       </Head>
 
-      <MantineProvider>
-        <Component {...pageProps} />
+      <MantineProvider theme={mantineTheme} forceColorScheme={"dark"}>
       </MantineProvider>
     </Fragment>
   );
