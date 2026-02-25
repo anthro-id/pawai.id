@@ -14,3 +14,9 @@ a {
   color: inherit;
   text-decoration: unset;
 }
+
+*[data-anthro-prevention] {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
