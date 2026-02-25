@@ -6,8 +6,7 @@
 }
 
 body {
-  background: linear-gradient(67deg,var(--dark01) 0%, var(--dark02) 100%);
-  font-family: "General Sans", Helvetica, sans-serif;
+  background-color: var(--dark01);
   min-height: 100dvh;
 }
 
