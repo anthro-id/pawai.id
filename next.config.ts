@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     useLightningcss: true,
-    fallbackNodePolyfills: false
+    // fallbackNodePolyfills: false
   }
 };
 
