@@ -30,7 +30,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   const { width: windowWidth } = useViewportSize();
-  const isMobileish = windowWidth <= 600;
+  const isTabletish = windowWidth <= 992;
 
   return (
     <Flex direction={"column"} pos={"relative"} styles={{ root: { zIndex: 4 } }}>
@@ -43,9 +43,9 @@ export default function Footer() {
       />
 
       <Box px={"xl"} py={"7.5rem"} bg={"#e7e7e7"}>
-        <SimpleGrid cols={isMobileish ? 1 : 3} maw={1280} m={"0 auto"}>
+        <SimpleGrid cols={isTabletish ? 1 : 3} maw={1280} m={"0 auto"}>
           {/* left section */}
-          <Flex align={isMobileish ? "center" : undefined} ta={isMobileish ? "center" : undefined} direction={"column"} gap={"sm"}>
+          <Flex align={isTabletish ? "center" : undefined} ta={isTabletish ? "center" : undefined} direction={"column"} gap={"sm"}>
             <Image
               src={pawaiAlternativeBannerLogoUrl}
               maw={128}
@@ -65,7 +65,7 @@ export default function Footer() {
           </Flex>
 
           {/* middle section */}
-          <Flex mt={isMobileish ? "xl" : undefined} justify={"center"} align={"center"} direction={"column"} c={"dark"}>
+          <Flex mt={isTabletish ? "xl" : undefined} justify={"center"} align={"center"} direction={"column"} c={"dark"}>
             <Image
               maw={224}
               src={middleSectionTextUrl}
@@ -73,19 +73,19 @@ export default function Footer() {
           </Flex>
 
           {/* right section */}
-          <Flex mt={isMobileish ? "xl" : undefined} align={isMobileish ? "center" : "flex-end"} ta={isMobileish ? "center" : undefined} justify={"center"} direction={"column"} gap={"xl"}>
+          <Flex mt={isTabletish ? "xl" : undefined} align={isTabletish ? "center" : "flex-end"} ta={isTabletish ? "center" : undefined} justify={"center"} direction={"column"} gap={"xl"}>
             {/* social media */}
             <Flex direction={"column"}>
               {
                 socialMediaUrls.map(([name, url]) => (
-                  <Text data-hover tt={"uppercase"} ta={isMobileish ? undefined : "right"} component={Link} href={url} target={"_blank"} {...firstTextSectionProps} lh={2} size={"sm"} key={`social-media-footer_${name}`}>
+                  <Text data-hover tt={"uppercase"} ta={isTabletish ? undefined : "right"} component={Link} href={url} target={"_blank"} {...firstTextSectionProps} lh={2} size={"sm"} key={`social-media-footer_${name}`}>
                     { name }
                   </Text>
                 ))
               }
             </Flex>
 
-            <Text size={"xs"} c={"var(--light03)"} fw={600} maw={isMobileish ? undefined : "67%"} ta={isMobileish ? undefined : "right"}>
+            <Text size={"xs"} c={"var(--light03)"} fw={600} maw={isTabletish ? undefined : "67%"} ta={isTabletish ? undefined : "right"}>
               &copy; { currentYear } PAWAI Indonesia <br />
               <br />
               &copy; 2024 - { currentYear } PT Anthro Indonesia Consortium
