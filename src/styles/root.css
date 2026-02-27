@@ -18,6 +18,15 @@ a {
   text-decoration: unset;
 }
 
+a[data-hover] {
+  opacity: 1;
+  transition: opacity 125ms ease-out;
+}
+
+a[data-hover]:hover {
+  opacity: 0.5;
+}
+
 *[data-anthro-prevention] {
   user-select: none;
   -webkit-user-drag: none;
