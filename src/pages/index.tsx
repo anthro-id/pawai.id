@@ -6,6 +6,7 @@ import { BarongContext } from "@/config";
 
 const Components = {
   Header: lazy(() => import("../components/Header")),
+  BarongPopup: lazy(() => import("../components/frontpage/BarongPopup")),
   Hero: lazy(() => import("../components/frontpage/Hero")),
   Body: lazy(() => import("../components/frontpage/Body"))
 };
@@ -19,6 +20,8 @@ const Frontpage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (p
     <Fragment>
       <BarongContext value={props.barongRedirectUrl}>
         <Components.Header />
+
+        <Components.BarongPopup />
       </BarongContext>
 
       <Components.Hero />
