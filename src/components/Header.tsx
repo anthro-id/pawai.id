@@ -6,7 +6,7 @@ import Link from "next/link";
 import { logoURL, textShadow } from "@/config";
 
 const menuList: Array<[string, string, boolean?]> = [
-  ["Barong Registration", "https://link.anthro.id/oJSI7A"],
+  ["Barong Registration", "https://anthro.id"],
   ["Code of Conduct", "https://anthro.id"],
   ["Hotel Reservation", "https://anthro.id", true],
   ["Dealers Registration", "https://anthro.id", true],
