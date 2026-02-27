@@ -7,7 +7,7 @@ import { logoURL, textShadow } from "@/config";
 
 const menuList: Array<[string, string, boolean?]> = [
   ["Barong Registration", "https://anthro.id"],
-  ["Code of Conduct", "https://anthro.id"],
+  ["Code of Conduct", "https://anthro.id", true],
   ["Hotel Reservation", "https://anthro.id", true],
   ["Dealers Registration", "https://anthro.id", true],
   ["Talent Show Registration", "https://anthro.id", true],
