@@ -83,7 +83,7 @@ export default function FrontpageBodyVenue() {
             }
           </Flex>
 
-          <Button w={"max-content"} styles={{ root: { filter: filterDropShadowValue } }} rightSection={<IconArrowRight w={24} h={24} />}>
+          <Button disabled w={"max-content"} styles={{ root: { filter: filterDropShadowValue } }} rightSection={<IconArrowRight w={24} h={24} />}>
             <Text size={"1.0em"}>
               Purchase Room
             </Text>
