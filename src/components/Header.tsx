@@ -1,3 +1,5 @@
+import { type MouseEvent } from "react";
+
 import { Button, Box, Flex, Image, Text, Menu } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 
@@ -13,10 +15,16 @@ const menuList: Array<[string, string, boolean?]> = [
   ["Talent Show Registration", "https://anthro.id", true],
 ];
 
+const generalTicketSellingMinEpoch: number = 1772352000;
+
 export default function Header() {
   const { width: windowWidth } = useViewportSize();
 
   const isMobile = windowWidth <= 512;
+  const isInSales = Math.floor(Date.now() / 1000) >= generalTicketSellingMinEpoch;
+
+  const handlePrevent = (event: MouseEvent) =>
+    event?.preventDefault();
 
   return (
     <Box pos={"fixed"} top={0} right={0} px={isMobile ? "1rem" : "2.5rem"} py={isMobile ? "md" : "xl"} style={{ zIndex: 10 }}>
@@ -42,7 +50,7 @@ export default function Header() {
         </Menu>
 
         <Flex direction={"column"} gap={isMobile ? "0.25rem" : "xs"}>
-          <Button component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
+          <Button onClick={event => !isInSales ? handlePrevent(event) : undefined} disabled={!isInSales} component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
             Get Tickets
           </Button>
 
