@@ -1,6 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/**
+ * @type import("next").NextConfig
+ */
+export default {
   /* config options here */
   reactCompiler: true,
   reactStrictMode: true,
@@ -10,5 +11,3 @@ const nextConfig: NextConfig = {
     // fallbackNodePolyfills: false
   }
 };
-
-export default nextConfig;
