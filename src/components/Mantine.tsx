@@ -13,6 +13,7 @@ import "@mantine/core/styles/UnstyledButton.css";
 import "@mantine/core/styles/Button.css";
 import "@mantine/core/styles/Menu.css";
 import "@mantine/core/styles/Popover.css";
+import "@mantine/core/styles/ActionIcon.css";
 
 export const mantineTheme = createTheme({
   headings: {
