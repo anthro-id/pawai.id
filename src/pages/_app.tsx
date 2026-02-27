@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import { Lenis } from "lenis/react";
 
+import { ParallaxProvider } from "react-scroll-parallax";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -32,7 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <MantineProvider theme={mantineTheme} forceColorScheme={"dark"}>
         <Lenis root>
+          <ParallaxProvider>
             <Component {...pageProps} />
+          </ParallaxProvider>
         </Lenis>
       </MantineProvider>
     </Fragment>
