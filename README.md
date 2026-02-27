@@ -7,4 +7,4 @@ We are using [Next.js (Page Router)](https://nextjs.org) (v16.x) with [Node.js](
 ## License
 Assets (e.g. images) are a separate license. Please contact the original owner.
 
-Otherwise, check the [LICENSE](/LICENSE) file for more information.
+Otherwise, the repository is licensed under GNU GPLv3, check the [LICENSE](/LICENSE) file for more information.
