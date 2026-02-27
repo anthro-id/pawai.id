@@ -1,11 +1,11 @@
-import { type MouseEvent } from "react";
+import { useContext, type MouseEvent } from "react";
 
 import { Button, Box, Flex, Image, Text, Menu } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 
 import Link from "next/link";
 
-import { logoURL, textShadow } from "@/config";
+import { logoURL, textShadow, BarongContext } from "@/config";
 
 const menuList: Array<[string, string, boolean?]> = [
   ["Barong Registration", "https://anthro.id"],
@@ -19,6 +19,7 @@ const generalTicketSellingMinEpoch: number = 1772352000;
 
 export default function Header() {
   const { width: windowWidth } = useViewportSize();
+  const barongUrl = useContext(BarongContext);
 
   const isMobile = windowWidth <= 512;
   const isInSales = Math.floor(Date.now() / 1000) >= generalTicketSellingMinEpoch;
@@ -38,13 +39,18 @@ export default function Header() {
 
           <Menu.Dropdown bg={"white"} bd={"unset"}>
             {
-              menuList.map(([label, value, isDisabled], index) => (
-                <Menu.Item opacity={isDisabled ? 0.375 : undefined} disabled={isDisabled} component={isDisabled ? undefined : Link} href={value} target={"_blank"} key={`menu-item_${label}`} px={"0.5rem"} py={"sm"} color={"dark.2"}>
-                  <Text size={"lg"} fw={600} lh={1} c={index === 0 ? "red.8" : "var(--dark03)"}>
-                    { label }
-                  </Text>
-                </Menu.Item>
-              ))
+              menuList.map(([label, value, disabledValue], index) => {
+                const isBarong = index === 0;
+                const isDisabled = isBarong ? (typeof barongUrl !== "string") : (disabledValue === true);
+
+                return (
+                  <Menu.Item opacity={isDisabled ? 0.375 : undefined} onClick={event => isDisabled ? handlePrevent(event) : undefined} disabled={isDisabled} component={isDisabled ? undefined : Link} href={isBarong ? (barongUrl || "#") : value} target={"_blank"} key={`menu-item_${label}`} px={"0.5rem"} py={"sm"} color={"dark.2"}>
+                    <Text size={"lg"} fw={600} lh={1} c={isBarong ? "red.8" : "var(--dark03)"}>
+                      { label }
+                    </Text>
+                  </Menu.Item>
+                );
+              })
             }
           </Menu.Dropdown>
         </Menu>
