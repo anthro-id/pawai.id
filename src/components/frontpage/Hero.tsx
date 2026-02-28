@@ -54,7 +54,7 @@ export default function FrontpageHero() {
         />
 
         <Parallax speed={windowRate.nonQHD ? -12.5 : -50}>
-          <Image fit={"cover"} src={imageUrls.background} mih={"100dvh"} h={"100%"} />
+          <Image fit={"cover"} src={imageUrls.background} mih={"100dvh"} miw={"100dvw"} h={"100%"} />
         </Parallax>
       </Box>
 
