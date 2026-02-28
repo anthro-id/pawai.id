@@ -11,9 +11,9 @@ const Components = {
   Body: lazy(() => import("../components/frontpage/Body"))
 };
 
-const [barongTicketSalesMinUnix, barongTicketSalesMaxUnix]: [number, number] = [
+/* const [barongTicketSalesMinUnix, barongTicketSalesMaxUnix]: [number, number] = [
   1772200800, 1772298000
-];
+]; */
 
 const Frontpage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (props) => {
   return (
@@ -32,15 +32,15 @@ const Frontpage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (p
 };
 
 export function getServerSideProps(): GetServerSidePropsResult<{ barongRedirectUrl: string | null }> {
-  const currentUnix = Math.floor(Date.now() / 1000);
+  /* const currentUnix = Math.floor(Date.now() / 1000);
 
   const isInSales = (
     (currentUnix >= barongTicketSalesMinUnix) && (currentUnix <= barongTicketSalesMaxUnix)
-  );
+  ); */
 
   return {
     props: {
-      barongRedirectUrl: isInSales ? (process.env.BARONG_REG_URL as string) : null
+      barongRedirectUrl: /* isInSales ? (process.env.BARONG_REG_URL as string) :  */null
     }
   };
 };
