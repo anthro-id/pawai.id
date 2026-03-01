@@ -10,6 +10,7 @@ import { filterDropShadowValue } from "@/config";
 import Venue from "./Venue";
 const GuestOfHonor = lazy(() => import("./GuestOfHonor"));
 const Footer = lazy(() => import("../../Footer"));
+const Maps = lazy(() => import("../Body/Maps"));
 
 const eventDates: string[] = [
   "3 - 4 October 2026",
@@ -46,6 +47,9 @@ export default function FrontpageBody() {
       <Flex direction={"column"} bg={"dark.3"}>
         {/* venue details */}
         <Venue />
+
+        {/* google maps */}
+        <Maps />
 
         {/* guest of honor section */}
         <GuestOfHonor />
