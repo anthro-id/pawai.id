@@ -15,7 +15,7 @@ const menuList: Array<[string, string, boolean?]> = [
   ["Talent Show Registration", "https://anthro.id", true],
 ];
 
-const generalTicketSellingMinEpoch: number = 1772352000;
+const generalTicketSellingMinEpoch: number = 1772366400;
 
 export default function Header() {
   const { width: windowWidth } = useViewportSize();
