@@ -57,7 +57,7 @@ export default function Header() {
 
         <Flex direction={"column"} gap={isMobile ? "0.25rem" : "xs"}>
           <Button onClick={event => !isInSales ? handlePrevent(event) : undefined} disabled={!isInSales} component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
-            Get Tickets
+            Get Ticket
           </Button>
 
           <Flex justify={"flex-end"}>
