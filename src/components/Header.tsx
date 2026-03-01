@@ -15,14 +15,11 @@ const menuList: Array<[string, string, boolean?]> = [
   ["Talent Show Registration", "https://anthro.id", true],
 ];
 
-const generalTicketSellingMinEpoch: number = 1772366400;
-
 export default function Header() {
   const { width: windowWidth } = useViewportSize();
   const barongUrl = useContext(BarongContext);
 
   const isMobile = windowWidth <= 512;
-  const isInSales = Math.floor(Date.now() / 1000) >= generalTicketSellingMinEpoch;
 
   const handlePrevent = (event: MouseEvent) =>
     event?.preventDefault();
@@ -56,7 +53,7 @@ export default function Header() {
         </Menu>
 
         <Flex direction={"column"} gap={isMobile ? "0.25rem" : "xs"}>
-          <Button onClick={event => !isInSales ? handlePrevent(event) : undefined} disabled={!isInSales} component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
+          <Button component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
             Get Ticket
           </Button>
 
