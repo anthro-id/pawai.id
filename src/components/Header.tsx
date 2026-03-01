@@ -9,7 +9,7 @@ import { logoURL, textShadow, BarongContext } from "@/config";
 
 const menuList: Array<[string, string, boolean?]> = [
   ["Barong Registration", "https://anthro.id"],
-  ["Code of Conduct", "https://anthro.id", true],
+  ["Code of Conduct", "https://link.anthro.id/3QtdDQ"],
   ["Hotel Reservation", "https://anthro.id", true],
   ["Dealers Registration", "https://anthro.id", true],
   ["Talent Show Registration", "https://anthro.id", true],
