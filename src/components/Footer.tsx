@@ -15,7 +15,7 @@ const pawaiAlternativeBannerLogoUrl: string =
 const socialMediaUrls = Object.entries({
   "Facebook": "https://facebook.com/pawai.id",
   "Twitter/X": "https://x.com/pawai_id",
-  "Bluesky": "https://bsky.app/profile/pawai.bsky.social",
+  "Bluesky": "https://bsky.app/profile/pawaiid.bsky.social",
   "Telegram": "https://t.me/pawai_info"
 });
 
