@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { type JSX, useContext } from "react";
 
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import { IconPin, IconGlobe, IconPhone, IconArrowRight } from "@/components/Icons";
 
-import { filterDropShadowValue } from "@/config";
+import { filterDropShadowValue, HotelReservationContext } from "@/config";
 
 const venueHeroImageUrl: string =
   "https://canine.cdn.anthro.id/handled-by-anthroid-team/25-02-26/0df19c78-c93f-4035-9788-87fc40672d30";
@@ -28,6 +28,9 @@ const hotelDetails: Array<[() => JSX.Element, string, string?]> = [
 
 export default function FrontpageBodyVenue() {
   const { width: windowWidth } = useViewportSize();
+
+  const hotelReservationUrl = useContext(HotelReservationContext);
+  const isOpened = hotelReservationUrl !== null;
 
   const isLaptopish = windowWidth < 1152;
   const isTablet = windowWidth < 992;
@@ -83,7 +86,7 @@ export default function FrontpageBodyVenue() {
             }
           </Flex>
 
-          <Button disabled w={"max-content"} styles={{ root: { filter: filterDropShadowValue } }} rightSection={<IconArrowRight w={24} h={24} />}>
+          <Button onClick={event => isOpened !== true ? event.preventDefault() : undefined} component={Link} href={hotelReservationUrl || ""} disabled={!isOpened} w={"max-content"} styles={{ root: { filter: filterDropShadowValue } }} rightSection={<IconArrowRight w={24} h={24} />}>
             <Text size={"1.0em"}>
               Purchase Room
             </Text>

@@ -3,6 +3,9 @@ import { createContext } from "react";
 export const BarongContext = 
   createContext<string | null>(null);
 
+export const HotelReservationContext = 
+  createContext<string | null>(null);
+
 export const logoURL: string =
   "https://canine.cdn.anthro.id/handled-by-anthroid-team/25-02-26/d8cd9d4c-9cc3-4845-b5a5-3e80c32d453d";
 

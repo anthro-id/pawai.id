@@ -1,8 +1,12 @@
 import { Fragment, lazy, type FC } from "react";
 
+import dayjs from "dayjs";
+import isBetween from "dayjs/plugin/isBetween";
+dayjs.extend(isBetween);
+
 import type { InferGetServerSidePropsType, GetServerSidePropsResult } from "next";
 
-import { BarongContext } from "@/config";
+import { HotelReservationContext } from "@/config";
 
 const Components = {
   Header: lazy(() => import("../components/Header")),
@@ -11,18 +15,14 @@ const Components = {
   Body: lazy(() => import("../components/frontpage/Body"))
 };
 
-/* const [barongTicketSalesMinUnix, barongTicketSalesMaxUnix]: [number, number] = [
-  1772200800, 1772298000
-]; */
-
 const Frontpage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (props) => {
   return (
     <Fragment>
-      <BarongContext value={props.barongRedirectUrl}>
+      <HotelReservationContext value={props.hotelReservationUrl}>
         <Components.Header />
 
         <Components.BarongPopup />
-      </BarongContext>
+      </HotelReservationContext>
 
       <Components.Hero />
 
@@ -31,16 +31,16 @@ const Frontpage: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (p
   );
 };
 
-export function getServerSideProps(): GetServerSidePropsResult<{ barongRedirectUrl: string | null }> {
-  /* const currentUnix = Math.floor(Date.now() / 1000);
+export function getServerSideProps(): GetServerSidePropsResult<{ hotelReservationUrl: string | null }> {
+  // "Date 2026 [] Date 2026 [] https://..."
+  const [minDateString, maxDateString, redirectUrl] =
+    (process.env.HOTEL_RESERVE_CONTENT as string).split(" [] ") as [string, string, string];
 
-  const isInSales = (
-    (currentUnix >= barongTicketSalesMinUnix) && (currentUnix <= barongTicketSalesMaxUnix)
-  ); */
+  const isReservationOpen = dayjs().isBetween(dayjs(minDateString), dayjs(maxDateString));
 
   return {
     props: {
-      barongRedirectUrl: /* isInSales ? (process.env.BARONG_REG_URL as string) :  */null
+      hotelReservationUrl: isReservationOpen ? redirectUrl : null
     }
   };
 };
