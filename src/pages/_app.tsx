@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <Head>
-        <title>PAWAI 2026: Gods Paradise (Coming Soon)</title>
+        <title>PAWAI 2026: Gods Paradise</title>
 
         <meta content="PAWAI 2026: Gods Paradise" property="og:title" />
         <meta content="A long-awaited furry gathering event, nestled in the island paradise of Bali, Indonesia." property="og:description" />
