@@ -1,4 +1,6 @@
-import { useContext, type MouseEvent } from "react";
+import { useContext, useRef, type MouseEvent } from "react";
+
+import dayjs from "dayjs";
 
 import { Button, Box, Flex, Image, Text, Menu } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
@@ -7,20 +9,22 @@ import Link from "next/link";
 
 import { logoURL, textShadow, HotelReservationContext } from "@/config";
 
-const menuList: Array<[string, string, boolean?]> = [
-  ["Barong Registration", "https://anthro.id", true],
-  ["Code of Conduct", "https://link.anthro.id/3QtdDQ"],
-  ["Hotel Reservation", "https://anthro.id", true],
-  ["Dealers Registration", "https://anthro.id", true],
-  ["Talent Show Registration", "https://anthro.id", true],
-];
-
 export default function Header() {
+  const currentTime = useRef(dayjs());
+
   const { width: windowWidth } = useViewportSize();
+  const isMobile = windowWidth <= 512;
 
   const hotelReservationUrl = useContext(HotelReservationContext);
 
-  const isMobile = windowWidth <= 512;
+  const menuList: Array<[string, string, boolean?]> = [
+    ["Barong Registration", "https://anthro.id", true],
+    ["Code of Conduct", "https://link.anthro.id/3QtdDQ"],
+    ["Hotel Reservation", "https://anthro.id", true],
+    ["Dealers Registration", "https://link.anthro.id/fD_SsA", currentTime.current.isAfter(dayjs("July 31 2026"))],
+    ["Art Submissions", "https://link.anthro.id/QztdKw", currentTime.current.isAfter(dayjs("August 10 2026"))],
+    ["Talent Show Registration", "https://link.anthro.id/zFzItw", currentTime.current.isAfter(dayjs("July 31 2026"))],
+  ];
 
   const handlePrevent = (event: MouseEvent) =>
     event?.preventDefault();
