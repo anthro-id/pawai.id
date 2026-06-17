@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Rocky Ryder';
-  src: url('/fonts/rocky-ryder/rocky-ryder.woff2') format('woff2'),
-    url('/fonts/rocky-ryder/rocky-ryder.woff') format('woff'),
-    url('/fonts/rocky-ryder/rocky-ryder.ttf') format('truetype');
+  src: url('https://canine.cdn.anthro.id/internal/17-06-26/4d040b57-9d66-4ebf-b78c-ca636df29767') format('woff2'),
+    url('https://canine.cdn.anthro.id/internal/17-06-26/5e3a3ae9-b2a6-4d72-aec1-06dfa5db4ad1') format('woff'),
+    url('https://canine.cdn.anthro.id/internal/17-06-26/49218e40-c935-47d8-a952-5e6f71500c1a') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: 'Pustaka Bali';
-  src: url('/fonts/pustaka-bali/pustaka-bali.woff2') format('woff2'),
-    url('/fonts/pustaka-bali/pustaka-bali.woff') format('woff'),
-    url('/fonts/pustaka-bali/pustaka-bali.ttf') format('truetype');
+  src: url('https://canine.cdn.anthro.id/internal/17-06-26/57a67ead-ce59-444d-890c-e7c24ca0d75d') format('woff2'),
+    url('https://canine.cdn.anthro.id/internal/17-06-26/96a3d076-e545-4a71-bb1b-66170862dbc8') format('woff'),
+    url('https://canine.cdn.anthro.id/internal/17-06-26/0a0c910c-ab62-4002-be80-a55affb6968e') format('truetype');
   font-weight: lighter;
   font-style: normal;
   font-display: swap;
