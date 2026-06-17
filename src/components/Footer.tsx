@@ -86,7 +86,7 @@ export default function Footer() {
             </Flex>
 
             <Text size={"xs"} c={"var(--light03)"} fw={600} maw={isTabletish ? undefined : "67%"} ta={isTabletish ? undefined : "right"}>
-              &copy; { currentYear } PAWAI Indonesia <br />
+              &copy; { currentYear } Party Along with Anthro Indonesia <br />
               <br />
               &copy; 2024 - { currentYear } PT Anthro Indonesia Consortium
             </Text>
