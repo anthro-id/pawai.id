@@ -12,6 +12,8 @@ import "normalize.css";
 import { MantineProvider } from "@mantine/core";
 import { mantineTheme } from "@/components/Mantine";
 
+import Loading from "@/components/Loading";
+
 import "@/styles/fonts.css";
 import "@/styles/root.css";
 
@@ -32,6 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <MantineProvider theme={mantineTheme} forceColorScheme={"dark"}>
+        <Loading />
+        
         <Lenis root>
           <ParallaxProvider>
             <Component {...pageProps} />
