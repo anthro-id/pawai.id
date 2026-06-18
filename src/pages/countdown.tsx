@@ -24,6 +24,7 @@ const bgColor: string = "#0C0C0C";
 
 const styles = `
   body {
+    overflow: hidden;
     background-color: ${bgColor};
   }
 
