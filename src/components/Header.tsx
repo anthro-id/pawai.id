@@ -24,6 +24,7 @@ export default function Header() {
     ["Dealers Registration", "https://link.anthro.id/fD_SsA", currentTime.current.isAfter(dayjs("July 31 2026"))],
     ["Art Submissions", "https://link.anthro.id/QztdKw", currentTime.current.isAfter(dayjs("August 10 2026"))],
     ["Talent Show Registration", "https://link.anthro.id/zFzItw", currentTime.current.isAfter(dayjs("July 31 2026"))],
+    ["Event Countdown", "/countdown"]
   ];
 
   const handlePrevent = (event: MouseEvent) =>
