@@ -3,6 +3,7 @@ import { Fragment } from "react";
 export default function MetaTags(props: Props) {
   return (
     <Fragment>
+      <meta content={"website"} property="og:type" />
       <meta content={props.title} property="og:title" />
       <meta content={props.description} property="og:description" />
       <meta content={props.color || "#FFF"} name="theme-color" />
