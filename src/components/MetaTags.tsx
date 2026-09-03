@@ -4,6 +4,10 @@ export default function MetaTags(props: Props) {
   return (
     <Fragment>
       <meta content={"website"} property="og:type" />
+
+      <meta name="twitter:site" content="@pawai_id" />
+      <meta name="telegram:channel" content="@pawai_info" />
+
       <meta content={props.title} property="og:title" />
       <meta content={props.description} property="og:description" />
       <meta content={props.color || "#FFF"} name="theme-color" />
