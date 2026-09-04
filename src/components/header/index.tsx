@@ -94,9 +94,9 @@ export function HeaderMobileRoot() {
       <Flex direction={"column"} className={styles["header-items"]}>
         {
           headerItems.map((item, i) => (
-            <Transition mounted={isEnabled} enterDelay={(100 * i) + 75} duration={500} transition={"fade-up"} timingFunction={"var(--expoOut)"}>
+            <Transition key={`header-item/"${item.name}"`} mounted={isEnabled} enterDelay={(100 * i) + 75} duration={500} transition={"fade-up"} timingFunction={"var(--expoOut)"}>
               {transitionStyles => (
-                <Box component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : undefined} style={transitionStyles} key={`header-item/"${item.name}"`} pos={"relative"} className={styles["header-item"]}>
+                <Box component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : undefined} style={transitionStyles} pos={"relative"} className={styles["header-item"]}>
                   <Box bdrs={"0 0 3px 0"} bg={"var(--dark02)"} pos={"absolute"} top={0} left={0} p={"xs"}>
                     <Text c={"var(--light01)"} size={"sm"} fw={500} lh={1}>
                       { item.name }
