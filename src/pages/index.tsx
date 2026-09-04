@@ -23,7 +23,7 @@ export default function Frontpage() {
         color={"#FC5D01"}
       />
 
-      <Components.Header />
+      <Components.Header withImprint />
 
       <Components.Hero />
 

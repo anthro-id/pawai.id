@@ -10,7 +10,7 @@ import { logoURL, textShadow } from "@/config";
 import HeaderRoot from "./header/index";
 import { ToggleHeaderContext } from "./header/config";
 
-export default function Header() {
+export default function Header(props?: HeaderProps) {
   const [headerToggle, setHeaderToggle] = useState<boolean>(false);
 
   const clickOutsideRef = useClickOutside(() => setHeaderToggle(false));
@@ -30,11 +30,15 @@ export default function Header() {
             Get Ticket
           </Button>
 
-          <Flex justify={"flex-end"}>
-            <Text size={"xs"} fw={600} styles={{ root: { textShadow } }}>
-              via anthro.id
-            </Text>
-          </Flex>
+          {
+            props?.withImprint === true && (
+              <Flex justify={"flex-end"}>
+                <Text size={"xs"} fw={600} styles={{ root: { textShadow } }}>
+                  via anthro.id
+                </Text>
+              </Flex>
+            )
+          }
         </Flex>
       </Flex>
 
@@ -43,4 +47,8 @@ export default function Header() {
       </ToggleHeaderContext.Provider>
     </Box>
   );
+};
+
+export interface HeaderProps {
+  withImprint?: boolean;
 };
