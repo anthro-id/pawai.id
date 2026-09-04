@@ -35,3 +35,12 @@ a[data-hover]:hover {
   -webkit-user-drag: none;
   pointer-events: none;
 }
+
+*[data-hide-scrollbar]::-webkit-scrollbar {
+  display: none;
+}
+
+*[data-hide-scrollbar] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
