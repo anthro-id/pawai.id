@@ -1,6 +1,12 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
 export default function MetaTags(props: Props) {
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.title = props.title;
+    };
+  }, []);
+
   return (
     <Fragment>
       <meta content={"website"} property="og:type" />
@@ -9,6 +15,7 @@ export default function MetaTags(props: Props) {
       <meta name="telegram:channel" content="@pawai_info" />
 
       <meta content={props.title} property="og:title" />
+
       <meta content={props.description} property="og:description" />
       <meta content={props.color || "#FFF"} name="theme-color" />
       
