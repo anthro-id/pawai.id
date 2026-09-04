@@ -1,64 +1,29 @@
-import { useContext, useRef, type MouseEvent } from "react";
+import { useState } from "react";
 
-import dayjs from "dayjs";
-
-import { Button, Box, Flex, Image, Text, Menu } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+import { Button, Box, Flex, Image, Text } from "@mantine/core";
+import { useViewportSize, useClickOutside } from "@mantine/hooks";
 
 import Link from "next/link";
 
-import { logoURL, textShadow, HotelReservationContext } from "@/config";
+import { logoURL, textShadow } from "@/config";
+
+import HeaderRoot from "./header/index";
+import { ToggleHeaderContext } from "./header/config";
 
 export default function Header() {
-  const currentTime = useRef(dayjs());
+  const [headerToggle, setHeaderToggle] = useState<boolean>(false);
+
+  const clickOutsideRef = useClickOutside(() => setHeaderToggle(false));
 
   const { width: windowWidth } = useViewportSize();
   const isMobile = windowWidth <= 512;
 
-  const hotelReservationUrl = useContext(HotelReservationContext);
-
-  const menuList: Array<[string, string, boolean?]> = [
-    ["Barong Registration", "https://anthro.id", true],
-    ["Code of Conduct", "https://link.anthro.id/3QtdDQ"],
-    ["Hotel Reservation", "https://anthro.id", true],
-    ["Dealers Registration", "https://link.anthro.id/fD_SsA", currentTime.current.isAfter(dayjs("July 31 2026"))],
-    ["Art Submissions", "https://link.anthro.id/QztdKw", currentTime.current.isAfter(dayjs("August 10 2026"))],
-    ["Talent Show Registration", "https://link.anthro.id/zFzItw", currentTime.current.isAfter(dayjs("July 31 2026"))],
-    ["Event Countdown", "/countdown"]
-  ];
-
-  const handlePrevent = (event: MouseEvent) =>
-    event?.preventDefault();
-
   return (
-    <Box pos={"fixed"} top={0} right={0} px={isMobile ? "1rem" : "2.5rem"} py={isMobile ? "md" : "xl"} style={{ zIndex: 10 }}>
+    <Box ref={clickOutsideRef} pos={"fixed"} top={0} right={0} px={isMobile ? "1rem" : "2.5rem"} py={isMobile ? "md" : "xl"} style={{ zIndex: 10 }}>
       <Flex justify={"flex-end"} gap={"md"}>
-        <Menu offset={0} width={"max-content"} position={isMobile ? "bottom" : "bottom-end"} radius={0} transitionProps={{ duration: 175, transition: "scale-y" }}>
-          <Menu.Target>
-            <Button>
-              Menu
-            </Button>
-          </Menu.Target>
-
-          <Menu.Dropdown bg={"white"} bd={"unset"}>
-            {
-              menuList.map(([label, value, disabledValue], index) => {
-                const isHotelReservation = index === 2;
-
-                const redirectUrl = (isHotelReservation ? hotelReservationUrl : value) || "#";
-                const isDisabled = disabledValue === true || redirectUrl === "#";
-
-                return (
-                  <Menu.Item opacity={isDisabled ? 0.375 : undefined} onClick={event => isDisabled ? handlePrevent(event) : undefined} disabled={isDisabled} component={isDisabled ? undefined : Link} href={redirectUrl} target={"_blank"} key={`menu-item_${label}`} px={"0.5rem"} py={"sm"} color={"dark.2"}>
-                    <Text size={"lg"} fw={600} lh={1} c={index === 0 ? "red.8" : "var(--dark03)"}>
-                      { label }
-                    </Text>
-                  </Menu.Item>
-                );
-              })
-            }
-          </Menu.Dropdown>
-        </Menu>
+        <Button styles={{ root: { transition: "background-color 250ms, color 250ms" } }} bg={headerToggle ? "var(--dark03)" : undefined} color={headerToggle ? "var(--light01)" : undefined} onClick={() => setHeaderToggle(prev => !prev)}>
+          Menu
+        </Button>
 
         <Flex direction={"column"} gap={isMobile ? "0.25rem" : "xs"}>
           <Button component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
@@ -72,6 +37,10 @@ export default function Header() {
           </Flex>
         </Flex>
       </Flex>
+
+      <ToggleHeaderContext.Provider value={headerToggle}>
+        <HeaderRoot />
+      </ToggleHeaderContext.Provider>
     </Box>
   );
 };
