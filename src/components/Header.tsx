@@ -5,7 +5,7 @@ import { useViewportSize, useClickOutside } from "@mantine/hooks";
 
 import Link from "next/link";
 
-import { logoURL, textShadow } from "@/config";
+import { logoURL, lightLogoURL, textShadow } from "@/config";
 
 import HeaderRoot from "./header/index";
 import { ToggleHeaderContext } from "./header/config";
@@ -18,15 +18,17 @@ export default function Header(props?: HeaderProps) {
   const { width: windowWidth } = useViewportSize();
   const isMobile = windowWidth <= 512;
 
+  const isDarkTheme = props?.theme === "dark";
+
   return (
     <Box ref={clickOutsideRef} pos={"fixed"} top={0} right={0} px={isMobile ? "1rem" : "2.5rem"} py={isMobile ? "md" : "xl"} style={{ zIndex: 10 }}>
       <Flex justify={"flex-end"} gap={"md"}>
-        <Button styles={{ root: { transition: "background-color 250ms, color 250ms" } }} bg={headerToggle ? "var(--dark03)" : undefined} color={headerToggle ? "var(--light01)" : undefined} onClick={() => setHeaderToggle(prev => !prev)}>
+        <Button styles={{ root: { transition: "background-color 250ms, color 250ms" } }} bg={headerToggle ? "var(--dark03)" : (isDarkTheme ? "var(--dark01)" : undefined)} color={(headerToggle || isDarkTheme) ? "var(--light01)" : undefined} onClick={() => setHeaderToggle(prev => !prev)}>
           Menu
         </Button>
 
         <Flex direction={"column"} gap={isMobile ? "0.25rem" : "xs"}>
-          <Button component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={logoURL} w={24} />}>
+          <Button bg={isDarkTheme ? "var(--dark01)" : undefined} c={isDarkTheme ? "var(--light01)" : undefined} component={Link} href={"https://anthro.id/pawai"} target={"_blank"} rightSection={<Image data-anthro-prevention src={isDarkTheme ? lightLogoURL : logoURL} w={24} />}>
             Get Ticket
           </Button>
 
@@ -51,4 +53,5 @@ export default function Header(props?: HeaderProps) {
 
 export interface HeaderProps {
   withImprint?: boolean;
+  theme?: "dark";
 };

@@ -9,6 +9,9 @@ export const HotelReservationContext =
 export const logoURL: string =
   "https://canine.cdn.anthro.id/handled-by-anthroid-team/25-02-26/d8cd9d4c-9cc3-4845-b5a5-3e80c32d453d";
 
+export const lightLogoURL: string =
+  "https://canine.cdn.anthro.id/internal/04-09-26/824eb532-1bbe-4bc9-a86f-c819fc44c186";
+
 export const pawaiCompressedLogo: string =
   "https://canine.cdn.anthro.id/handled-by-anthroid-team/25-02-26/12244a68-9789-4fb4-bdc4-f226ad71577a";
 
