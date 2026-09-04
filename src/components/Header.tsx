@@ -8,7 +8,7 @@ import Link from "next/link";
 import { logoURL, lightLogoURL, textShadow } from "@/config";
 
 import HeaderRoot from "./header/index";
-import { ToggleHeaderContext } from "./header/config";
+import { HeaderMetadataContext } from "./header/config";
 
 export default function Header(props?: HeaderProps) {
   const [headerToggle, setHeaderToggle] = useState<boolean>(false);
@@ -44,9 +44,9 @@ export default function Header(props?: HeaderProps) {
         </Flex>
       </Flex>
 
-      <ToggleHeaderContext.Provider value={headerToggle}>
+      <HeaderMetadataContext.Provider value={{ isEnabled: headerToggle, windowWidth }}>
         <HeaderRoot />
-      </ToggleHeaderContext.Provider>
+      </HeaderMetadataContext.Provider>
     </Box>
   );
 };

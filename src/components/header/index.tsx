@@ -1,22 +1,21 @@
 import { useRef, useContext, useEffect } from "react";
 
 import { Flex, Text, Image, Box, Transition, ActionIcon } from "@mantine/core";
-import { useDrag, useScroller, useMergedRef, useViewportSize } from "@mantine/hooks";
+import { useDrag, useScroller, useMergedRef } from "@mantine/hooks";
 
 import Link from "next/link";
 
-import headerItems, { ToggleHeaderContext } from "./config";
+import headerItems, { HeaderMetadataContext } from "./config";
 import { IconArrowLeft, IconArrowRight } from "../Icons";
 
 import styles from "@/styles/components/header.module.css";
 
 export default function HeaderRoot() {
-  const isEnabled = useContext(ToggleHeaderContext);
+  const { isEnabled, windowWidth } = useContext(HeaderMetadataContext);
 
   const itemScroller = useScroller({ draggable: false });
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const { width: windowWidth } = useViewportSize();
   const isMobile = windowWidth <= 720;
 
   const { ref, active } = useDrag(
@@ -87,7 +86,7 @@ export default function HeaderRoot() {
 };
 
 export function HeaderMobileRoot() {
-  const isEnabled = useContext(ToggleHeaderContext);
+  const { isEnabled } = useContext(HeaderMetadataContext);
 
   return (
     <Flex className={styles.header} data-state={isEnabled}>

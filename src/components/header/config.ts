@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const ToggleHeaderContext = createContext<boolean>(false);
+export const HeaderMetadataContext = createContext<{ isEnabled: boolean; windowWidth: number }>({ isEnabled: false, windowWidth: Infinity });
 
 export interface HeaderItemProp {
   name: string;
