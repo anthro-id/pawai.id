@@ -54,9 +54,9 @@ export default function HeaderRoot() {
         <Flex className={styles["header-items"]} data-hide-scrollbar ref={itemRef} styles={{ root: { cursor: `${active ? "grabbing" : "grab"}`, overflow: "auto" } }}>
           {
             headerItems.map((item, i) => (
-              <Transition mounted={isEnabled} enterDelay={(100 * i) + (i === 0 ? 25 : 125)} duration={375} transition={"fade-up"} timingFunction={"var(--expoOut)"}>
+              <Transition key={`header-item/"${item.name}"`} mounted={isEnabled} enterDelay={(100 * i) + (i === 0 ? 25 : 125)} duration={375} transition={"fade-up"} timingFunction={"var(--expoOut)"}>
                 {transitionStyles => (
-                  <Box className={styles["header-item"]} key={`header-item/"${item.name}"`} style={{ ...transitionStyles, pointerEvents: active ? "none" : undefined }} draggable={false} flex={"0 0 auto"} pos={"relative"} component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : undefined}>
+                  <Box className={styles["header-item"]} style={{ ...transitionStyles, pointerEvents: active ? "none" : undefined }} draggable={false} flex={"0 0 auto"} pos={"relative"} component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : undefined}>
                     <Box pos={"absolute"} p={"lg"} data-anthro-prevention>
                       <Text size={"xl"} fw={500} lh={1} c={"var(--light01)"}>
                         {item.name}
