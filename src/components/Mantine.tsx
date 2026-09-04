@@ -1,4 +1,4 @@
-import { createTheme, Button, Anchor, Text } from '@mantine/core';
+import { createTheme, Button, Anchor, Tooltip, Text } from '@mantine/core';
 
 import '@mantine/core/styles/baseline.css';
 import '@mantine/core/styles/default-css-variables.css';
@@ -15,6 +15,7 @@ import "@mantine/core/styles/Menu.css";
 import "@mantine/core/styles/Popover.css";
 import "@mantine/core/styles/ActionIcon.css";
 import "@mantine/core/styles/CloseButton.css";
+import "@mantine/core/styles/Tooltip.css";
 
 export const mantineTheme = createTheme({
   headings: {
@@ -53,6 +54,16 @@ export const mantineTheme = createTheme({
     Text: Text.extend({
       defaultProps: {
         lts: 0.375
+      }
+    }),
+
+    Tooltip: Tooltip.extend({
+      defaultProps: {
+        events: {
+          focus: true,
+          hover: true,
+          touch: true
+        }
       }
     })
   }
