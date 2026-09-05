@@ -31,6 +31,10 @@ export default function LoadingScreen() {
       return;
     };
 
+    if (typeof window !== "undefined") {
+      setTimeout(() => window.dispatchEvent(new CustomEvent("post-loading")), 1000);
+    };
+
     if (typeof document !== "undefined" && document.readyState === "complete") {
       return onLoad();
     };
