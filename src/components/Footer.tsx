@@ -57,7 +57,7 @@ export default function Footer() {
                 3rd & 4th October 2026
               </Text>
 
-              <Text size={"md"} lh={1.25} c={"var(--light03)"}>
+              <Text size={"sm"} fw={500} lh={1.25} c={"var(--light03)"}>
                 Hotel Grand Istana Rama <br />
                 Kuta, Bali, Indonesia
               </Text>
@@ -85,10 +85,9 @@ export default function Footer() {
               }
             </Flex>
 
-            <Text size={"xs"} c={"var(--light03)"} fw={600} maw={isTabletish ? undefined : "67%"} ta={isTabletish ? undefined : "right"}>
-              &copy; { currentYear } Party Along with Anthro Indonesia <br />
-              <br />
-              &copy; 2024 - { currentYear } PT Anthro Indonesia Consortium
+            <Text size={"xs"} c={"var(--light03)"} fw={500} maw={isTabletish ? undefined : "67%"} ta={isTabletish ? undefined : "right"}>
+              &copy; { `2018 - ${currentYear}` } PAWAI <br />
+              &copy; { currentYear } PT Anthro Indonesia Consortium
             </Text>
           </Flex>
         </SimpleGrid>
