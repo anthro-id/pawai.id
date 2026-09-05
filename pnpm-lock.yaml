@@ -26,6 +26,9 @@ importers:
       lodash.chunk:
         specifier: ^4.2.0
         version: 4.2.0
+      lodash.shuffle:
+        specifier: ^4.2.0
+        version: 4.2.0
       ms:
         specifier: ^2.1.3
         version: 2.1.3
@@ -52,6 +55,9 @@ importers:
         specifier: 2.5.12
         version: 2.5.12
       '@types/lodash.chunk':
+        specifier: ^4.2.9
+        version: 4.2.9
+      '@types/lodash.shuffle':
         specifier: ^4.2.9
         version: 4.2.9
       '@types/ms':
@@ -450,6 +456,9 @@ packages:
   '@types/lodash.chunk@4.2.9':
     resolution: {integrity: sha512-Z9VtFUSnmT0No/QymqfG9AGbfOA4O5qB/uyP89xeZBqDAsKsB4gQFTqt7d0pHjbsTwtQ4yZObQVHuKlSOhIJ5Q==}
 
+  '@types/lodash.shuffle@4.2.9':
+    resolution: {integrity: sha512-4siLZ4/vQH4T7Bm4254sG4n6hh9k7vd/bqfDVoeIwSha4Itu3MuoTxPX2I2Tue2JN94y7Y2I27QzwHZLdMlrBg==}
+
   '@types/lodash@4.17.25':
     resolution: {integrity: sha512-+K1NIO8I+F9/wNulfVvu23QYd0Pe9/OCqRrim4NoYIf1VoEDL90Ve4ClzpyqBLc7NpGGWRvYNCKZ1BE/Jpf8dQ==}
 
@@ -609,6 +618,9 @@ packages:
 
   lodash.chunk@4.2.0:
     resolution: {integrity: sha512-ZzydJKfUHJwHa+hF5X66zLFCBrWn5GeF28OHEr4WVWtNDXlQ/IjWKPBiikqKo2ne0+v6JgCgJ0GzJp8k8bHC7w==}
+
+  lodash.shuffle@4.2.0:
+    resolution: {integrity: sha512-V/rTAABKLFjoecTZjKSv+A1ZomG8hZg8hlgeG6wwQVD9AGv+10zqqSf6mFq2tVA703Zd5R0YhSuSlXA+E/Ei+Q==}
 
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -1172,6 +1184,10 @@ snapshots:
     dependencies:
       '@types/lodash': 4.17.25
 
+  '@types/lodash.shuffle@4.2.9':
+    dependencies:
+      '@types/lodash': 4.17.25
+
   '@types/lodash@4.17.25': {}
 
   '@types/ms@2.1.0': {}
@@ -1331,6 +1347,8 @@ snapshots:
       react: 19.2.8
 
   lodash.chunk@4.2.0: {}
+
+  lodash.shuffle@4.2.0: {}
 
   ms@2.1.3: {}
 
