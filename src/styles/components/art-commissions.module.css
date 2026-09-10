@@ -1,0 +1,127 @@
+.grid-container {
+  padding-bottom: 7.5rem;
+}
+
+.grid-container, .filter-input-container {
+  padding-inline: 2.5rem;
+}
+
+.item, .arrow, .header-title, .filter-input-container {
+  transition: opacity 250ms ease, transform 375ms var(--expoOut);
+}
+
+.item {
+  cursor: zoom-in;
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateX(-7.5px);
+  color: #FFF;
+}
+
+.header-title, .filter-input-container {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.header-title[data-hide], .item[data-hide], .filter-input-container[data-hide] {
+  transform: translateY(12.5px);
+  opacity: 0;
+  pointer-events: none;
+  cursor: none;
+}
+
+.comms-image {
+  height: 600px;
+}
+
+.author-name {
+  font-size: 1.75em;
+}
+
+.author-section {
+  padding-inline: var(--mantine-spacing-lg);
+  padding-block: var(--mantine-spacing-lg);
+}
+
+.preview-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  background-color: #000000c0;
+  backdrop-filter: blur(5px);
+}
+
+.preview-insider {
+  padding-inline: 2.5rem;
+}
+
+.preview-image {
+  max-height: clamp(300px, 85vh, 720px);
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.redirect-button {
+  display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  .grid {
+    --sg-cols: 2 !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .item:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid {
+    --sg-cols: 1 !important;
+  }
+
+  .grid-container, .filter-input-container {
+    padding-inline: 1rem;
+  }
+
+  .comms-image {
+    height: 480px;
+  }
+
+  .author-section {
+    padding-inline: var(--mantine-spacing-sm);
+  }
+
+  .redirect-button {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .comms-image {
+    height: 320px;
+  }
+
+  .author-name {
+    font-size: 1.25em;
+  }
+
+  .author-icon {
+    --ai-size: var(--ai-size-sm) !important;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .preview-insider {
+    padding-inline: 1rem;
+  }
+}

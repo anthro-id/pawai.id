@@ -9,5 +9,13 @@ export default {
   experimental: {
     useLightningcss: true,
     // fallbackNodePolyfills: false
-  }
+  },
+
+  redirects: () => ([
+    {
+      source: "/art-submission",
+      destination: "/art-submissions",
+      permanent: false
+    }
+  ])
 };
