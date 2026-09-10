@@ -1,4 +1,4 @@
-import { createTheme, Button, Anchor, Tooltip, Text } from '@mantine/core';
+import { createTheme, Button, Anchor, Tooltip, Text, Select } from '@mantine/core';
 
 import '@mantine/core/styles/baseline.css';
 import '@mantine/core/styles/default-css-variables.css';
@@ -16,6 +16,9 @@ import "@mantine/core/styles/Popover.css";
 import "@mantine/core/styles/ActionIcon.css";
 import "@mantine/core/styles/CloseButton.css";
 import "@mantine/core/styles/Tooltip.css";
+import "@mantine/core/styles/Input.css";
+import "@mantine/core/styles/Combobox.css";
+import "@mantine/core/styles/ScrollArea.css";
 
 export const mantineTheme = createTheme({
   headings: {
@@ -63,6 +66,19 @@ export const mantineTheme = createTheme({
           focus: true,
           hover: true,
           touch: true
+        }
+      }
+    }),
+
+    Select: Select.extend({
+      styles: {
+        input: {
+          "--input-bd-focus": "var(--dark01)",
+          borderRadius: 3
+        },
+
+        dropdown: {
+          borderRadius: 3
         }
       }
     })
