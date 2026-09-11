@@ -20,6 +20,22 @@ export interface ImageAlternativeProp {
 
 const submissions: SubmissionsProps[] = [
   {
+    authorName: "Hitto",
+    frontImageId: "4a0770f2-fbb3-434b-b3a3-149d1b9d47ac",
+    theme: "balinese",
+    objectPosition: "right"
+  },
+  {
+    authorName: "SusuNasi",
+    frontImageId: "0f3142de-3b6f-4d93-8908-121af6d0bdcf",
+    theme: "balinese"
+  },
+  {
+    authorName: "Natan Azerix (TatsuyaRyu)",
+    frontImageId: "dc52505e-14db-4d95-bb80-96be2f174fc8",
+    theme: "balinese"
+  },
+  {
     authorName: "Ambrose",
     frontImageId: "f6e81fd3-6eae-4c34-943e-585e85f5d822",
     theme: "balinese"
@@ -45,7 +61,7 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "17.5%"
   },
   {
-    authorName: "Avalanch3r",
+    authorName: "Avalanch3r/Nef Aaron",
     frontImageId: "ae0f2a29-8661-44b4-ac09-1e130ae4a8f2",
     theme: "balinese"
   },
@@ -90,7 +106,7 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "75%"
   },
   {
-    authorName: "Archy",
+    authorName: "Bli Prabhu/Archy_306",
     frontImageId: "6de66202-ae78-41e5-8514-7cd07f975cba",
     theme: "balinese"
   },
@@ -253,13 +269,7 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "75%"
   },
   {
-    authorName: "Andi Serigala",
-    frontImageId: "cadaab3b-6f3d-476c-90ad-e7a9e5a29c74",
-    theme: "tropical",
-    objectPosition: "center"
-  },
-  {
-    authorName: "Red Namchaophraya",
+    authorName: "Wahredpanda",
     authorUrl: "https://bsky.app/profile/wahredpanda89997.bsky.social",
     frontImageId: "21f942f0-ce4c-4f0d-a974-1d9ea3725b16",
     theme: "tropical",
@@ -391,7 +401,7 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "75%"
   },
   {
-    authorName: "Nami/ChesshireBacon",
+    authorName: "ChesschireBacon",
     frontImageId: "23ccb8ac-8299-4e41-bb2e-546b76de6a84",
     theme: "tropical"
   },
@@ -405,7 +415,8 @@ const submissions: SubmissionsProps[] = [
     authorUrl: "https://instagram.com/nile.furry_art_0",
     frontImageId: "e76b85f0-9fdc-4b84-b8e9-84601ae0d07b",
     theme: "tropical",
-    objectPosition: "25%"
+    objectPosition: "25%",
+    imageIds: ["7cbe050f-efdc-4f84-a1b2-dda89aefd1d9"]
   },
   {
     authorName: "Powree",
