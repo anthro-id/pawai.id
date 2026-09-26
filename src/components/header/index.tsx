@@ -56,7 +56,7 @@ export default function HeaderRoot() {
             headerItems.map((item, i) => (
               <Transition key={`header-item/"${item.name}"`} mounted={isEnabled} enterDelay={(100 * i) + (i === 0 ? 25 : 125)} duration={375} transition={"fade-up"} timingFunction={"var(--expoOut)"}>
                 {transitionStyles => (
-                  <Box className={styles["header-item"]} style={{ ...transitionStyles, pointerEvents: active ? "none" : undefined }} draggable={false} flex={"0 0 auto"} pos={"relative"} component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : undefined}>
+                  <Box className={styles["header-item"]} style={{ ...transitionStyles, pointerEvents: active ? "none" : undefined }} draggable={false} flex={"0 0 auto"} pos={"relative"} component={Link} href={item.url} target={item.url.startsWith("https://") ? "_blank" : (item.target || undefined)}>
                     <Box pos={"absolute"} p={"lg"} data-anthro-prevention>
                       <Text size={"xl"} fw={500} lh={1} c={"var(--light01)"}>
                         {item.name}

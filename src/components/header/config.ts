@@ -6,6 +6,7 @@ export interface HeaderItemProp {
   name: string;
   url: string;
   imageUrl: string;
+  target?: "_blank";
 };
 
 const items: Array<HeaderItemProp> = [
@@ -17,7 +18,8 @@ const items: Array<HeaderItemProp> = [
   {
     name: "Art Submissions",
     url: "/art-submissions",
-    imageUrl: "https://canine.cdn.anthro.id/internal/03-09-26/eae410ff-aad1-4694-83f1-710e01e9924c"
+    imageUrl: "https://canine.cdn.anthro.id/internal/03-09-26/eae410ff-aad1-4694-83f1-710e01e9924c",
+    target: "_blank"
   },
   {
     name: "Event Countdown",
