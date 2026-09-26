@@ -454,7 +454,8 @@ const submissions: SubmissionsProps[] = [
   {
     authorName: "Abang Fatih",
     frontImageId: "06d256b3-e0a7-416f-882d-1c5ee5bdeed7",
-    theme: "balinese"
+    theme: "balinese",
+    imageIds: ["48c3a43d-6c40-4ae4-9db2-0bc8221683f4"]
   }
 ];
 
