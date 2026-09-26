@@ -446,6 +446,12 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "center"
   },
   {
+    authorName: "Nviek5 (Lucas Wolf)",
+    frontImageId: "80a74cab-63c3-4a1b-9d37-15f47b66bf61",
+    theme: "tropical",
+    objectPosition: "12.5%"
+  },
+  {
     authorName: "Abang Fatih",
     frontImageId: "06d256b3-e0a7-416f-882d-1c5ee5bdeed7",
     theme: "balinese"
