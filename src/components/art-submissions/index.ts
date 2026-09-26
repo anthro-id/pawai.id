@@ -54,7 +54,7 @@ const submissions: SubmissionsProps[] = [
     theme: "balinese"
   },
   {
-    authorName: "Goatcomp/Vyuga",
+    authorName: "Naoki Ryuu/Vyuga",
     authorUrl: "https://bsky.app/profile/vyuga.bsky.social",
     frontImageId: "1b08cb16-b3ff-4be9-aa87-e4db92b2621d",
     theme: "balinese",
@@ -416,7 +416,7 @@ const submissions: SubmissionsProps[] = [
   },
   {
     authorName: "Gabriel Nile",
-    authorUrl: "https://instagram.com/nile.furry_art_0",
+    authorUrl: "https://instagram.com/gab.nile",
     frontImageId: "e76b85f0-9fdc-4b84-b8e9-84601ae0d07b",
     theme: "tropical",
     objectPosition: "25%",
@@ -434,7 +434,7 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "bottom"
   },
   {
-    authorName: "Kichirou Ogami",
+    authorName: "Kichirou Okami",
     frontImageId: "208de65c-d482-4a12-90b7-8f0f6d4b844f",
     theme: "tropical"
   },
@@ -460,6 +460,12 @@ const submissions: SubmissionsProps[] = [
     frontImageId: "06d256b3-e0a7-416f-882d-1c5ee5bdeed7",
     theme: "balinese",
     imageIds: ["48c3a43d-6c40-4ae4-9db2-0bc8221683f4"]
+  },
+  {
+    authorName: "Citsy (Benji Maycher)",
+    authorUrl: "https://x.com/Citsy_404",
+    frontImageId: "8da42fc0-4afa-4669-8f02-aa28c6f94c83",
+    theme: "tropical"
   }
 ];
 
