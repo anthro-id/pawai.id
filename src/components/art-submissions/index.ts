@@ -269,12 +269,16 @@ const submissions: SubmissionsProps[] = [
     objectPosition: "75%"
   },
   {
-    authorName: "Wahredpanda",
+    authorName: "Wahredpanda (Riza S.)",
     authorUrl: "https://bsky.app/profile/wahredpanda89997.bsky.social",
     frontImageId: "21f942f0-ce4c-4f0d-a974-1d9ea3725b16",
+    objectPosition: "75%",
     theme: "tropical",
-    imageIds: ["26cc1e93-4cd1-4692-8f9b-fd6b9d7f2185"],
-    objectPosition: "75%"
+    imageIds: [{
+      imageId: "26cc1e93-4cd1-4692-8f9b-fd6b9d7f2185",
+      proposedName: "Wahredpanda"
+    }],
+    
   },
   {
     authorName: "Roukan Zayev",
